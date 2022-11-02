@@ -5,15 +5,15 @@ if (isset($_POST['dangnhap'])) {
     $kt_taikhoan->execute();
 
     $matkhau = md5($_POST['password']);
-    $kt_matkhau = $db->prepare("SELECT matkhau FROM tbl_dangky WHERE matkhau='$matkhau'");
-    $kt_matkhau->execute();
+    $kt_matkhau = $db->prepare("SELECT matkhau FROM tbl_dangky WHERE matkhau=?");
+    $kt_matkhau->execute([$matkhau]);
     $row_1 = $kt_matkhau->fetch();
 
     $sql = "SELECT * FROM tbl_dangky ,tbl_admin WHERE tbl_dangky.taikhoan='" . $taikhoan . "' AND tbl_dangky.matkhau='" . $matkhau . "'  LIMIT 1";
     $row = $db->prepare($sql);
     $row->execute();
     $count = $row->fetch(PDO::FETCH_BOTH);
-
+    
     if ($count > 0) {
         $row_data = $count;
         $_SESSION['dangky'] = $row_data['taikhoan'];
@@ -24,7 +24,6 @@ if (isset($_POST['dangnhap'])) {
     // đăng nhập vào tài khoản admin
     elseif ($taikhoan == 'admin') {
         header("Location:admincp/login.php");
-        
     } 
     // kiểm tra tài khoản
      elseif ($kt_taikhoan->fetchColumn() == 0) {

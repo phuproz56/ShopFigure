@@ -16,7 +16,7 @@ $query_show->execute();
 ?>
 <ul class="product_list col-12 col-sm-12 col-md-12 col-lg-12">
 	<?php
-	while ($row = $query_show->fetch(PDO::FETCH_ASSOC)) {
+	while ($row = $query_show->fetch()) {
 	?>
 		<li class="row col-4 col-sm-4 col-md-9 col-lg-12">
 			<a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>">
@@ -54,11 +54,12 @@ $query_show->execute();
 	}
 </style>
 <?php
-$sql_trang = $db->prepare("SELECT * FROM tbl_sanpham");
+$sql_trang = $db->prepare("SELECT COUNT(*) FROM tbl_sanpham");
 $sql_trang->execute();
 $row_count = $sql_trang->fetchColumn(); //  mysql_num_rows  
-$trang = ceil($row_count / 3);
+$trang = ceil($row_count / 14); 
 ?>
+
 <p>Trang hiện tại : <?php echo $page ?>/<?php echo $trang ?> </p>
 <ul class="list_trang">
 	<?php

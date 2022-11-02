@@ -17,21 +17,22 @@ body{
 
 /* HEADER*/
 
- /* .header{
+ .header{
     height: 400px;
     width: 100%;
-} */
-/*
+} 
+
 .header img{
     border: 1px solid black;
     border-radius: 15px;
     width: 100%;
     height: 400px;
-} */
+}
 
 /* MENU */
 .menu{
-    margin-top: 10px;
+    /* margin-top: 10px; */
+
     height: auto;
     border-radius: 15px;
     background-color:  #ffccff;
@@ -48,6 +49,10 @@ ul.menu_list li:hover .menu_danhmuc{
     position: absolute;
 }
 ul.menu_list {
+    padding-left: 100px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #ed7cd1;
     position: relative;
     /* margin: 0 auto; */
     list-style: none;
@@ -57,7 +62,7 @@ ul.menu_list {
 ul.menu_list li {
     height: 40px;
     border-radius: 25px;
-    border: 1px solid #584df7;
+    border: 1px solid #ed7cd1;
     margin: 7px;
     padding: 5px;
     /* background-color:  #ccf5ff; */
@@ -100,7 +105,9 @@ ul.menu_list li a{
 	width: 100%;
 }
 .sidebar{
-    background-color:  #584df7;
+    border-style: solid;
+    border-color: #ed7cd1;
+    background-color:  #ffccff;
     height: auto;
     border-radius: 15px;
     margin-bottom: 5px;
@@ -117,7 +124,7 @@ ul.sidebar_list li {
     margin: 7px;
     padding: 5px;
     background-color:  #ccf5ff;
-    
+    border: 1px solid #ed7cd1;
 }
 
 ul.sidebar_list li:hover{
@@ -196,14 +203,14 @@ p.title_product {
 
 /* FOOTER */
 .footer{
-    background: #685efa;
-    
-    height: 150px;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 .footer p{
     text-align: center;
 }
+
+
 .clear{
     clear: both;/* khong cho do , gat cai float left */
 }

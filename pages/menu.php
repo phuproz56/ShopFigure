@@ -9,7 +9,7 @@ if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
 }
 ?>
 
-<div class="menu ">
+<nav class="menu">
     <ul class="menu_list row col-lg-12">
         <li class="col-4 col-sm-3 col-md-2 col-lg-1"> <a href="index.php">Home</a></li>
         <li class="col-4 col-sm-3 col-md-2 col-lg-1"> <a href="index.php?quanly=contact">Liên hệ </a></li>
@@ -41,7 +41,7 @@ if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
         <li style="width: 400px;border:none;" class=" col-2 col-sm-2 col-md-2 col-lg-3 ">
             <form  method="POST" action="index.php?quanly=timkiem">
                 <div class="search">
-                    <input style="border-radius:25px ;" type="text" placeholder="sreach....." name="tukhoa" class="form-control" />
+                    <input style="border-radius:25px ;" type="text" placeholder="search....." name="tukhoa" class="form-control" />
                     <label class="form-label" ></label>
                     <button style="
                     float: right;width: 38px;
@@ -56,10 +56,6 @@ if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
 
                 </div>
             </form>
-                <!-- <Form class="row"  method="POST" action="index.php?quanly=timkiem">
-                <input class="border border-radius-2" type="text" placeholder="sreach....." name="tukhoa">
-                <input type="hidden" type="submit" name="timkiem" value="Tìm Kiếm">
-            </Form> -->
         </li>
     </ul>
-</div>
+    </nav>

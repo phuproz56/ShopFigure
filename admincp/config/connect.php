@@ -5,9 +5,9 @@
    try {
 	$db = new PDO($dsn, $username, $password);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $ex) {
+} catch (Exception $db) {
 	echo 'Không thể kết nối đến MySQL,
 	kiểm tra lại username/password đến MySQL.<br>';
-	exit("<pre>${ex}</pre>");
+	exit("<pre>${db}</pre>");
 }
 ?>

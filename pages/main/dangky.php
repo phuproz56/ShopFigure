@@ -16,7 +16,7 @@
 				<table class="dangky" style="border-collapse: collapse;">
 					<tr class="row">
 						<td class="h4">Họ và tên</td>
-						<td><input size="50" type="text" name="hovaten" required class="mt-2 display-6 border-success rounded col-md-12"></td>
+						<td><input type="text" name="hovaten" required class="mt-2 display-6 border-success rounded col-md-12"></td>
 					</tr>
 					<tr class="row">
 						<td class="h4">Tài khoản</td>

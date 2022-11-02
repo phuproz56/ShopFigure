@@ -1,6 +1,6 @@
 
 <p>Thông tin cá nhân </p>
-<div class="border border-dark border-3 rounded-pill text-center">
+<div style="border: 3px solid #ed7cd1" class=" rounded-pill text-center">
     <p><?php
         if (isset($_SESSION['dangky'])) {
             echo 'xin chào: ' . '<span style="color:red">' . $_SESSION['dangky'] . '</span>';
