@@ -1,5 +1,5 @@
 <?php
-    $sql_lietke="SELECT * FROM tbl_danhmuc ORDER BY thutu DESC";
+    $sql_lietke="SELECT * FROM tbl_danhmuc ORDER BY thutu ";
     $result_lietke = $db->prepare($sql_lietke);
     $result_lietke->execute();
 ?>
@@ -12,9 +12,8 @@
      </tr>
      <?php
     $i=0;
-    while($row=$result_lietke->fetch(PDO::FETCH_BOTH)){
+    while($row=$result_lietke->fetch()){
         $i++;
-    
      ?>
      <tr>
          <td><?php echo $i ?></td>
@@ -25,7 +24,6 @@
              <a class="btn btn-primary mx-2" href="?action=quanlydanhmucsanpham&query=sua&iddanhmuc=<?php echo $row['id_danhmuc']?>">Sửa</a>
          </td>
      </tr>
-
      <?php
     }
     ?>

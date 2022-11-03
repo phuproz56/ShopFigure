@@ -6,7 +6,6 @@
 		padding: 5px;
 	}
 </style>
-
 <div class="warpper">
 	<div class="container">
 		<div class="row justify-content-around p-5 ">
@@ -63,7 +62,7 @@
 		$kt_taikhoan->execute();
 		$matkhau = md5($_POST['matkhau']);
 		$rematkhau =  md5($_POST['rematkhau']);
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$email = $_POST['email'];
 		$dienthoai = $_POST['dienthoai'];
 		$diachi = $_POST['diachi'];
@@ -77,6 +76,7 @@
 			echo '</script>';
 			exit();
 		}
+		// không thể tạo người dùng tên admin.
 		elseif($taikhoan == 'admin'){
 			echo '<script language="javascript">';
 			echo 'alert("Không thể tạo người dùng tên: admin ") ';
@@ -93,8 +93,8 @@
 		else {
 			$sql_dangky = "INSERT INTO tbl_dangky(hovaten,taikhoan,matkhau,sodienthoai,email,diachi) VALUE('" . $tenkhachhang . "','" . $taikhoan . "','" . $matkhau . "','" . $dienthoai . "','" . $email . "','" . $diachi . "')";
 			$query_dangky = $db->prepare($sql_dangky);
-			$db->exec($sql_dangky);
-			if ($query_dangky) {
+			$db->execute($sql_dangky);
+			if ($query_dangky) { 
 				echo '<script language="javascript">';
 				echo 'alert("Chúc mừng bạn đã đăng ký thành công!")';
 				echo '</script>';

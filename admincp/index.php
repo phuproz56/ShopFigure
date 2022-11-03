@@ -1,7 +1,8 @@
 <?php
     session_start();
-    if(!isset($_SESSION['dangnhap'])){
-        header('Location:login.php');
+    if(empty($_SESSION['dangnhap'])){ // kiểm tra người dùng có trong session hay không 
+        header('Location:login.php'); // không có thì chuyển sang trang login
+        exit();
     }
 ?>
 <!DOCTYPE html>

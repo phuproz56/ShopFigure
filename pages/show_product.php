@@ -16,9 +16,7 @@
         include("main/sanphammoi.php");
     }
     ?>
-
 </div>
-
 <div style="clear:both;"></div>
 <div class="show">
     <?php //lấy qiamly từ menu truyền vào bằng phuongư thức GET
@@ -28,7 +26,6 @@
         $bientam = "";
     }
     if ($bientam == "") {
-
     ?>
         <div class="new_product">
             <h3>TẤT CẢ SẢN PHẨM</h3>
@@ -36,7 +33,5 @@
     <?php
         include("main/index.php");
     }
-
     ?>
-
 </div>

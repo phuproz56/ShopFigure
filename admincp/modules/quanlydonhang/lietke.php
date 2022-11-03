@@ -18,9 +18,8 @@
      </tr>
      <?php
     $i=0;
-    while($row=$result_lietke_dh->fetch(PDO::FETCH_BOTH)){
+    while($row=$result_lietke_dh->fetch()){
         $i++;
-    
      ?>
      <tr>
          <td><?php echo $i ?></td>
@@ -43,7 +42,6 @@
             <th><a class="btn btn-primary mx-2" href="modules/quanlydonhang/xuly.php?iddonhang=<?php echo $row['code_cart']?>">Xóa</a></th>
          </td>
      </tr>
-     
      <?php
     }
     ?>

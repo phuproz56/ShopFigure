@@ -3,7 +3,7 @@
    $sql_chitiet = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc  AND tbl_sanpham.id_sanpham='$_GET[id]' LIMIT 1";
    $query_chitiet = $db->prepare($sql_chitiet);
    $query_chitiet->execute();
-   while ($row_chitiet = $query_chitiet->fetch(PDO::FETCH_BOTH)) {
+   while ($row_chitiet = $query_chitiet->fetch()) {
    ?>
     <div class="warpper_deital">
        <div style="width: 300px; height: 300px;" class="hinhanh_sanpham">
@@ -16,10 +16,10 @@
              <p>Giá :<?php echo number_format($row_chitiet['giasanpham'], 0, ',', '.') . 'vnd' ?></p>
              <p>Số lượng:<?php echo $row_chitiet['soluong'] ?></p>
              <p>Danh mục :<?php echo $row_chitiet['tendanhmuc'] ?></p>
-             <p><input  class="btn btn-primary themgiohang" type="submit" name="themgiohang" value="Thêm Giỏ Hàng"></p>
+             <p><input class="btn btn-primary themgiohang" type="submit" name="themgiohang" value="Thêm Giỏ Hàng"></p>
           </div>
        </form>
     </div>
  <?php
    }
-   ?>
+?>

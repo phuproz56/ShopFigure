@@ -7,7 +7,7 @@
 
         <?php //lấy quanly từ menu truyền vào bằng phương thức GET
         if (isset($_GET['quanly'])) {
-            $bientam = $_GET['quanly'];
+            $bientam = $_GET['quanly']; 
         } else {
             $bientam = "";
         }
@@ -35,16 +35,16 @@
                     <input type="radio" name="radio_btn" id="radio3">
                     <input type="radio" name="radio_btn" id="radio4">
                     <div class="silde first">
-                        <img class="img-fluid" src="images/1.jpg" alt="">
+                        <img class="img-fluid" src="images/chairsawman.jpg" alt="">
                     </div>
                     <div class="silde">
-                        <img class="img-fluid" src="images/2.jpg" alt="">
+                        <img class="img-fluid" src="images/anya.jpeg" alt="">
                     </div>
                     <div class="silde">
                         <img class="img-fluid" src="images/3.jpg" alt="">
                     </div>
                     <div class="silde">
-                        <img class="img-fluid" src="images/4.jpg" alt="">
+                        <img class="img-fluid" src="images/babara.jpg" alt="">
                     </div>
                     <div class="navigation-auto">
                         <div class="auto-btn1"></div>

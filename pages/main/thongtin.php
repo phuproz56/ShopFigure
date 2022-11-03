@@ -1,4 +1,3 @@
-
 <p>Thông tin cá nhân </p>
 <div style="border: 3px solid #ed7cd1" class=" rounded-pill text-center">
     <p><?php
@@ -8,7 +7,7 @@
             $sql_thongtin = "SELECT * FROM tbl_dangky WHERE taikhoan='$id' LIMIT 1";
             $query_thongtin = $db->prepare($sql_thongtin);
             $query_thongtin->execute();
-            while ($row = $query_thongtin->fetch(PDO::FETCH_BOTH)) {
+            while ($row = $query_thongtin->fetch()) {
         ?></p><br>
     <p>Họ và tên : <?php echo $row['hovaten']  ?></p>
     <p>Email : <?php echo $row['email']  ?></p>

@@ -13,7 +13,6 @@
         <td><input type="text" name="thutu"></td>
     </tr>
     <tr>
-
         <td colspan="2"><input class="btn btn-primary mx-2" type="submit" value="Thêm danh mục sản phẩm" name="themdanhmuc"></td>
     </tr>
 </form>

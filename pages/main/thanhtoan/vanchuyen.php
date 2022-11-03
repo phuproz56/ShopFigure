@@ -12,13 +12,12 @@
     $sql_get_vanchuyen->execute();
 
     if ($id_dangky != '') {
-        $row_get_vanchuyen = $sql_get_vanchuyen->fetch(PDO::FETCH_ASSOC);
+        $row_get_vanchuyen = $sql_get_vanchuyen->fetch();
         $name = $row_get_vanchuyen['hovaten'];
         $phone = $row_get_vanchuyen['sodienthoai'];
         $address = $row_get_vanchuyen['diachi'];
         $note = $row_get_vanchuyen['email'];
     } else {
-
         $name = '';
         $phone = '';
         $address = '';
@@ -66,15 +65,13 @@
                         </td>
                         <td><?php echo number_format($cart_item['giasanpham'], 0, ',', '.') . ' VNĐ' ?></td>
                         <td><?php echo number_format($thanhtien, 0, ',', '.') . ' VNĐ' ?></td>
-                        <td><a href="pages/main/giohang/xoasanpham.php?xoa=<?php echo $cart_item['id'] ?>" class="btn btn-success">XÓA</a></td>
-                    </tr>
+                   </tr>
                 <?php
                 }
                 ?>
                 <tr>
                     <td colspan="8">
                         <p style="float: left;"> Tổng tiền : <?php echo number_format($tongtien, 0, ',', '.') . ' VNĐ'  ?></p>
-                        <p style="float: right;"><a href="pages/main/giohang/xoahetgiohang.php?xoatatca=xoahet" class="btn btn-success">Xóa Hết</a></p>
                         <div style="clear: both;"> </div>
                         <?php
                         if (isset($_SESSION['dangky'])) {

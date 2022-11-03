@@ -7,7 +7,7 @@ $result_sua_sp->execute();
 <table border="1" width="50%" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlysp/xuly.php?idsanpham=<?php echo $_GET['idsanpham'] ?>" enctype="multipart/form-data">
         <?php
-        while ($row = $result_sua_sp->fetch(PDO::FETCH_BOTH)) {
+        while ($row = $result_sua_sp->fetch()) {
         ?>
             <tr>
                 <th colspan="2">Điền sản phẩm</th>
@@ -50,7 +50,7 @@ $result_sua_sp->execute();
                         $sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
                         $query_danhmuc = $db->prepare($sql_danhmuc);
                         $query_danhmuc->execute();
-                        while ($row_danhmuc = $query_danhmuc->fetch(PDO::FETCH_BOTH)) {
+                        while ($row_danhmuc = $query_danhmuc->fetch()) {
                             if ($row_danhmuc['id_danhmuc'] == $row['id_danhmuc']) {
                         ?>
                                 <!--dùng value thêm danh mục dựa vào địa chỉ id_danhmuc -->

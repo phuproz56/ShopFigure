@@ -7,7 +7,6 @@
 			<div class="step "> <span> <a href="../../../index.php?quanly=giohang">Giỏ hàng</a></span> </div>
 			<div class="step"> <span><a href="index.php?quanly=vanchuyen">Kiểm tra</a></span> </div>
 			<div class="step current"> <span><a href="index.php?quanly=thongtinthanhtoan">Thanh toán</a><span> </div>
-
 		</div>
 	<?php
 	}
@@ -49,7 +48,6 @@
 
 							<td><?php echo number_format($cart_item['giasanpham'], 0, ',', '.') . ' VNĐ' ?></td>
 							<td><?php echo number_format($thanhtien, 0, ',', '.') . ' VNĐ' ?></td>
-							<td><a href="pages/main/giohang/xoasanpham.php?xoa=<?php echo $cart_item['id'] ?>" class="btn btn-success">XÓA</a></td>
 						</tr>
 
 
@@ -69,7 +67,6 @@
 						<td colspan="8">
 							<p style="float:left; text-align: center;" class="btn btn-success"> Tổng tiền : <?php echo number_format($tongtien, 0, ',', '.') . ' VNĐ'  ?></p>
 							<p style="float: left; margin-top: 50px; margin-left: -110px" class="btn btn-success"> USD : <?php echo $tongtien_usd  . ' '. ' $'  ?></p>
-							<p style="float: right;"><a href="pages/main/giohang/xoahetgiohang.php?xoatatca=xoahet" class="btn btn-success">Xóa Hêt</a></p>
 							<div style="clear:both;"> </div>
 						</td>
 					</tr>
@@ -103,7 +100,7 @@
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="payment" id="exampleRadios2" value="Chuyển Khoảng">
+				<input class="form-check-input" type="radio" name="payment" id="exampleRadios2" value="Chuyển Khoản">
 				<label class="form-check-label" for="exampleRadios2">
 					Chuyển khoản
 				</label>

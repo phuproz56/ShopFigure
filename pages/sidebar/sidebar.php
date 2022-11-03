@@ -5,9 +5,9 @@
         $sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
         $query_danhmuc = $db->prepare($sql_danhmuc);
         $query_danhmuc->execute();
-        while ($row = $query_danhmuc->fetch(PDO::FETCH_BOTH)) {
+        while ($row = $query_danhmuc->fetch()) {
         ?>
-        <li class=""><a href="index.php?quanly=danhmuclist&id=<?php echo $row['id_danhmuc'] ?>"><?php echo $row['tendanhmuc'] ?></a></li>
+        <li class=""><a href="index.php?quanly=danhmuclist&id=<?php echo $row['id_danhmuc']?>"><?php echo $row['tendanhmuc'] ?></a></li>
         <?php
         }
         ?>

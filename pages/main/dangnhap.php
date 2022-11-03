@@ -4,7 +4,7 @@ if (isset($_POST['dangnhap'])) {
     $kt_taikhoan = $db->prepare("SELECT taikhoan FROM tbl_dangky WHERE taikhoan='$taikhoan'");
     $kt_taikhoan->execute();
 
-    $matkhau = md5($_POST['password']);
+    $matkhau = md5($_POST['password']); // bảo mật mật khẩu bằng md5 (hàm băm chuỗi)
     $kt_matkhau = $db->prepare("SELECT matkhau FROM tbl_dangky WHERE matkhau=?");
     $kt_matkhau->execute([$matkhau]);
     $row_1 = $kt_matkhau->fetch();
@@ -12,8 +12,8 @@ if (isset($_POST['dangnhap'])) {
     $sql = "SELECT * FROM tbl_dangky ,tbl_admin WHERE tbl_dangky.taikhoan='" . $taikhoan . "' AND tbl_dangky.matkhau='" . $matkhau . "'  LIMIT 1";
     $row = $db->prepare($sql);
     $row->execute();
-    $count = $row->fetch(PDO::FETCH_BOTH);
-    
+
+    $count = $row->fetch();
     if ($count > 0) {
         $row_data = $count;
         $_SESSION['dangky'] = $row_data['taikhoan'];
@@ -46,7 +46,6 @@ if (isset($_POST['dangnhap'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

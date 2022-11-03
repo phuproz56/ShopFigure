@@ -1,11 +1,11 @@
 <?php
-$sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
-$query_danhmuc = $db->prepare($sql_danhmuc);
-$query_danhmuc->execute();
+$sql_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc";
+$query_danhmuc = $db->prepare($sql_danhmuc); // chuẩn bị để gọi thực thi danh mục
+$query_danhmuc->execute(); // thực thi danh mục 
 ?>
 <?php
-if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
-    unset($_SESSION['dangky']);
+if (isset($_GET['dangxuat'])) { // kiểm tra dangxuat có tồn tại hay không.
+    unset($_SESSION['dangky']); // tồn tại biến dangxuat thì hủy bỏ biến trong session dangky 
 }
 ?>
 
@@ -17,16 +17,17 @@ if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
         <li class="col-4 col-sm-3 col-md-2 col-lg-1"><a href="">Danh mục</a>
             <ul class="menu_danhmuc">
                 <?php
-                while ($row_danhmuc = $query_danhmuc->fetch(PDO::FETCH_BOTH)) {
-                ?>
-                    <li> <a href="index.php?quanly=danhmuclist&id=<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></a></li>
+                while ($row_danhmuc = $query_danhmuc->fetch()) {
+                ?>      
+                    
+                    <li> <a href="index.php?quanly=danhmuclist&id=<?php echo $row_danhmuc['id_danhmuc'] ?>"><?php echo $row_danhmuc['tendanhmuc'] ?></a></li> 
                 <?php
                 }
                 ?>
             </ul>
         </li>
         <?php
-        if (isset($_SESSION['dangky'])) {
+        if (isset($_SESSION['dangky'])) { // kiểm tra tồn tại session dangky 
         ?>
             <li class="col-3 col-sm-3 col-md-2 col-lg-1"><a href="index.php?quanly=thongtin"> Thông Tin</a></li>
             <li class="col-3 col-sm-3 col-md-2 col-lg-1"> <a href="index.php?dangxuat=1">Đăng xuất</a></li>

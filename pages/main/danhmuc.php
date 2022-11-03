@@ -8,7 +8,7 @@ $query_show->execute();
 $sql_cate = "SELECT * FROM tbl_danhmuc WHERE id_danhmuc='$_GET[id]' LIMIT 1";
 $query_cate = $db->prepare($sql_cate);
 $query_cate->execute();
-$row_title = $query_cate->fetch(PDO::FETCH_ASSOC);
+$row_title = $query_cate->fetch();
 ?>
 <h3> Danh mục :
     <?php
@@ -18,11 +18,10 @@ $row_title = $query_cate->fetch(PDO::FETCH_ASSOC);
         echo "lỗi không lấy được data";
     }
     ?>
-
 </h3>
 <ul class="product_list col-sm-12">
     <?php
-    while ($row_pro = $query_show->fetch(PDO::FETCH_ASSOC)) {
+    while ($row_pro = $query_show->fetch()) {
     ?>
         <li>
             <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id_sanpham'] ?>">

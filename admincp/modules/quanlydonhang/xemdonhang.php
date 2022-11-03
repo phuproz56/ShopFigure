@@ -17,12 +17,11 @@
          <td>Số lượng</td>
          <td>Đơn giá</td>
          <td>Thành tiền</td>
-         
      </tr>
      <?php
     $i=0;
     $tongtien=0;
-    while($row=$result_lietke_dh->fetch(PDO::FETCH_BOTH)){
+    while($row=$result_lietke_dh->fetch()){
         $i++;
         $thanhtien= $row['giasanpham'] * $row['soluongmua'];
         $tongtien+=$thanhtien;

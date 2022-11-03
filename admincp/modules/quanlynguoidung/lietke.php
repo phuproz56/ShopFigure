@@ -14,17 +14,12 @@
             <th>Address</th>
             <th colspan="2"></th>
             <th>Chức vụ</th>
-            
-
-            
         </tr>
             <?php
                 $i=0;
-                while($row=$result_lietke_nguoidung->fetch(PDO::FETCH_ASSOC)){
-                $i++;
-                
+                while($row=$result_lietke_nguoidung->fetch()){
+                $i++;               
             ?>
-        
         <tr>
             <td style="height:100px;"> <?php echo $i ?></td>
             <td> <?php echo $row ['hovaten']?></td>
@@ -33,7 +28,7 @@
             <td> <?php echo $row ['sodienthoai']?></td>
             <td style="width:100px;"> <?php echo $row ['diachi']?></td>
             <td>
-                    <a class="btn btn-primary" href="?action=quanlynguoidung&query=sua&idnguoidung=<?php echo $row['id_khachhang'] ?>"> Sửa </a>
+                    <a class="btn btn-primary" href="?action=quanlynguoidung&query=sua&idnguoidung=<?php echo $row['id_khachhang'] ?>">Sửa </a>
             </td>
             <td>
                     <a class="btn btn-primary" href="modules/quanlynguoidung/xuly.php?idnguoidung=<?php echo $row['id_khachhang']?>">Xóa</a>
@@ -45,8 +40,6 @@
          }?>
          </td>
         </tr>
-
-
             <?php
                 }
             ?>

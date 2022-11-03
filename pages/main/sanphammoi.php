@@ -6,8 +6,8 @@ $query_show_new->execute();
 ?>
 <ul class="product_list row">
     <?php
-    while ($row = $query_show_new->fetch(PDO::FETCH_BOTH)) {
-        extract($row);
+    while ($row = $query_show_new->fetch()) { // đọc dữ liệu từ $query_show_new
+        // extract($row);
     ?>
         <li class="col-4 col-sm-3 col-md-2 col-lg-1">
             <a  href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>">

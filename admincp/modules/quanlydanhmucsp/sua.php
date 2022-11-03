@@ -7,7 +7,7 @@
  <table border="1" width="50%" style="border-collapse: collapse;">
    <form method="POST" action="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $_GET['iddanhmuc']?>">
     <?php
-        while($dong =$result_sua->fetch(PDO::FETCH_BOTH)){
+        while($dong =$result_sua->fetch()){
     ?>
    <tr>
         <th colspan="2">Điền danh mục sản phẩm</th>

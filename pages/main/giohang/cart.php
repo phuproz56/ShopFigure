@@ -1,13 +1,9 @@
-   <p>Cart</p>
+   <p>Giỏ hàng của bạn</p>
    <p><?php
         if (isset($_SESSION['dangky'])) {
             echo 'xin chào: ' . '<span style="color:red">' . $_SESSION['dangky'] . '</span>';
         }
         ?></p>
-   <?php
-    if (isset($_SESSION['cart'])) {
-    }
-    ?>
    <table border="1" style="width:100%;">
        <tr>
            <th>ID</th>
@@ -20,12 +16,12 @@
            <th></th>
        </tr>
        <?php
-        if (isset($_SESSION['cart'])) {
+        if (isset($_SESSION['cart'])) { // khi nhấp vào giỏ hàng 
             $i = 0;
             $tongtien = 0;
             foreach ($_SESSION['cart'] as $cart_item) {
-                $thanhtien = $cart_item['soluong'] * $cart_item['giasanpham'];
-                $tongtien += $thanhtien;
+                $thanhtien = $cart_item['soluong'] * $cart_item['giasanpham']; // tính số tiền của từng sp
+                $tongtien += $thanhtien; // tổng số tiền
                 $i++;
         ?>
                <tr>
@@ -34,7 +30,6 @@
                    <td><?php echo $cart_item['masp'] ?></td>
                    <td><?php echo $cart_item['tensanpham'] ?></td>
                    <td><img src="admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh'] ?>" width="100%" style="height:200px"></td>
-
                    <td>
                        <a href="pages/main/giohang/suasoluong.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus"></i></a>
                        <?php echo $cart_item['soluong'] ?>
@@ -54,7 +49,7 @@
                    <p style="float: right;"><a class="btn btn-primary mx-2" href="pages/main/giohang/xoahetgiohang.php?xoatatca=xoahet">Xóa Hêt</a></p>
                    <div style="clear:both;"> </div>
                    <?php
-                    if (isset($_SESSION['dangky'])) {
+                    if (isset($_SESSION['dangky'])) { // kiểm tra session tồn tại
                     ?>
                        <p><a class="btn btn-primary mx-2" href="pages/main/thanhtoan/index.php?quanly=vanchuyen">Đặt hàng</a></p>
                    <?php

@@ -19,20 +19,17 @@ $result_lietke_sp->execute();
     </tr>
     <?php
     $i = 0;
-    while ($row = $result_lietke_sp->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $result_lietke_sp->fetch()) {
         $i++;
-
     ?>
         <tr>
             <td><?php echo $i ?></td>
             <td style="width:80px;height:150px; text-align: center;">
                 <?php echo $row['tensanpham'] ?>
             </td>
-
             <td style="width:150px;height:150px;">
                 <img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?> " width="100%">
             </td>
-
             <td style="width:150px;text-align: center;">
                 <?php echo number_format($row['giasanpham'], 0, ',', '.') . 'VNĐ'  ?>
             </td>
@@ -51,7 +48,6 @@ $result_lietke_sp->execute();
                 <a class="btn btn-primary mx-2" href="?action=quanlysanpham&query=sua&idsanpham=<?php echo $row['id_sanpham'] ?>">Sửa</a>
             </td>
         </tr>
-
     <?php
     }
     ?>
